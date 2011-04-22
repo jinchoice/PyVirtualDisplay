@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>About &mdash; PyVirtualDisplay v0.0.3 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyVirtualDisplay v0.0.3 documentation" href="index.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Indices and tables" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Indices and tables"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyVirtualDisplay v0.0.3 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="about">
+<h1>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
+<p>PyVirtualDisplay is a python wrapper for <a class="reference external" href="http://en.wikipedia.org/wiki/Xvfb">Xvfb</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Xephyr">Xephyr</a></p>
+<p>home: <a class="reference external" href="https://github.com/ponty/PyVirtualDisplay">https://github.com/ponty/PyVirtualDisplay</a></p>
+<p>documentation: <a class="reference external" href="http://ponty.github.com/PyVirtualDisplay">http://ponty.github.com/PyVirtualDisplay</a></p>
+<dl class="docutils">
+<dt>Possible applications:</dt>
+<dd><ul class="first last simple">
+<li>GUI testing</li>
+<li>automatic GUI screenshot</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="basic-usages">
+<h1>Basic usages<a class="headerlink" href="#basic-usages" title="Permalink to this headline">¶</a></h1>
+<p>Start Xephyr:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pyvirtualdisplay</span> <span class="kn">import</span> <span class="n">Display</span>
+<span class="n">xephyr</span><span class="o">=</span><span class="n">Display</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Create screenshot of xmessage with Xvfb:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">easyprocess</span> <span class="kn">import</span> <span class="n">EasyProcess</span>
+<span class="kn">from</span> <span class="nn">pyvirtualdisplay.smartdisplay</span> <span class="kn">import</span> <span class="n">SmartDisplay</span>
+<span class="n">disp</span> <span class="o">=</span> <span class="n">SmartDisplay</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">xmessage</span> <span class="o">=</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage hello&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">waitgrab</span><span class="p">()</span>
+<span class="n">xmessage</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>install <a class="reference external" href="http://en.wikipedia.org/wiki/Xvfb">Xvfb</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Xephyr">Xephyr</a>.</li>
+<li>install <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">setuptools</a> or <a class="reference external" href="http://pip.openplans.org/">pip</a></li>
+<li>optional: <a class="reference external" href="https://github.com/ponty/pyscreenshot">pyscreenshot</a> and <a class="reference external" href="http://www.pythonware.com/library/pil/">PIL</a> should be installed for <tt class="xref py py-mod docutils literal"><span class="pre">pyvirtualdisplay.smartdisplay</span></tt></li>
+<li>install the program:</li>
+</ul>
+</div></blockquote>
+<p>if you have <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">setuptools</a> installed:</p>
+<div class="highlight-python"><pre># as root
+easy_install PyVirtualDisplay</pre>
+</div>
+<p>if you have <a class="reference external" href="http://pip.openplans.org/">pip</a> installed:</p>
+<div class="highlight-python"><pre># as root
+pip install PyVirtualDisplay</pre>
+</div>
+</div>
+<div class="section" id="ubuntu">
+<h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>sudo apt-get install python-setuptools
+sudo apt-get install xvfb
+sudo apt-get install xserver-xephyr
+sudo easy_install PyVirtualDisplay
+# optional
+sudo apt-get install python-imaging
+sudo apt-get install scrot
+sudo easy_install pyscreenshot</pre>
+</div>
+</div>
+<div class="section" id="uninstall">
+<h2>Uninstall<a class="headerlink" href="#uninstall" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre># as root
+pip uninstall PyVirtualDisplay</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">About</a></li>
+<li><a class="reference internal" href="#basic-usages">Basic usages</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#general">General</a></li>
+<li><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
+<li><a class="reference internal" href="#uninstall">Uninstall</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Indices and tables</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="next chapter">Usage</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/readme.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Indices and tables"
+             >previous</a> |</li>
+        <li><a href="index.html">PyVirtualDisplay v0.0.3 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, ponty.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
