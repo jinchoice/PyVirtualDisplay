@@ -85,11 +85,17 @@
 <dl class="method">
 <dt id="pyvirtualdisplay.Display.wrap">
 <tt class="descname">wrap</tt><big>(</big><em>callable</em>, <em>delay=0</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.Display.wrap" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns a function which:
-1. start process
-2. call callable, save result
-3. stop process
-4. returns result</p>
+<dd><dl class="docutils">
+<dt>returns a function which:</dt>
+<dd><ol class="first last arabic simple">
+<li>start process</li>
+<li>call callable, save result</li>
+<li>stop process</li>
+<li>returns result</li>
+</ol>
+</dd>
+</dl>
+<p>similar to <tt class="xref std std-keyword docutils literal"><span class="pre">with</span></tt> statement</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
