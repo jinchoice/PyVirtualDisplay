@@ -108,6 +108,47 @@
 
 </dd></dl>
 
+<dl class="class">
+<dt id="pyvirtualdisplay.smartdisplay.SmartDisplay">
+<em class="property">class </em><tt class="descclassname">pyvirtualdisplay.smartdisplay.</tt><tt class="descname">SmartDisplay</tt><big>(</big><em>visible=False</em>, <em>size=(1024</em>, <em>768)</em>, <em>color_depth=24</em>, <em>bgcolor='black'</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.autocrop">
+<tt class="descname">autocrop</tt><big>(</big><em>im</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.autocrop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crop borders off an image.</p>
+<p>&#64;param im Source image.
+&#64;param bgcolor Background color, using either a color tuple or
+a color name (1.1.4 only).
+&#64;return An image without borders, or None if there&#8217;s no actual
+content in the image.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.grab">
+<tt class="descname">grab</tt><big>(</big><em>autocrop=True</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.grab" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.waitgrab">
+<tt class="descname">waitgrab</tt><big>(</big><em>timeout=10</em>, <em>autocrop=True</em>, <em>cb_imgcheck=None</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.waitgrab" title="Permalink to this definition">¶</a></dt>
+<dd><p>start process and create screenshot.
+Repeat screenshot until it is not empty.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>autocrop</strong> &#8211; True -&gt; crop screenshot</li>
+<li><strong>timeout</strong> &#8211; int</li>
+<li><strong>cb_imgcheck</strong> &#8211; callback for testing img, True=accept img, False = reject img</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
