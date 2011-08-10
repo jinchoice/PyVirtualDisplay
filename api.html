@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API &mdash; PyVirtualDisplay v0.0.6 documentation</title>
+    <title>API &mdash; PyVirtualDisplay v0.0.7 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.0.6',
+        VERSION:     '0.0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PyVirtualDisplay v0.0.6 documentation" href="index.html" />
+    <link rel="top" title="PyVirtualDisplay v0.0.7 documentation" href="index.html" />
     <link rel="next" title="Hierarchy" href="struct.html" />
     <link rel="prev" title="Usage" href="usage.html" /> 
   </head>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="usage.html" title="Usage"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -52,8 +52,23 @@
 <h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="pyvirtualdisplay.Display">
-<em class="property">class </em><tt class="descclassname">pyvirtualdisplay.</tt><tt class="descname">Display</tt><big>(</big><em>visible=False</em>, <em>size=(1024</em>, <em>768)</em>, <em>color_depth=24</em>, <em>bgcolor='black'</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.Display" title="Permalink to this definition">¶</a></dt>
-<dd><p>Common class for XvfbDisplay and XephyrDisplay</p>
+<em class="property">class </em><tt class="descclassname">pyvirtualdisplay.</tt><tt class="descname">Display</tt><big>(</big><em>backend=None</em>, <em>visible=False</em>, <em>size=(1024</em>, <em>768)</em>, <em>color_depth=24</em>, <em>bgcolor='black'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.Display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>color_depth</strong> &#8211; [8, 16, 24, 32]</li>
+<li><strong>size</strong> &#8211; screen size (width,height)</li>
+<li><strong>bgcolor</strong> &#8211; background color [&#8216;black&#8217; or &#8216;white&#8217;]</li>
+<li><strong>visible</strong> &#8211; True -&gt; Xephyr, False -&gt; Xvfb</li>
+<li><strong>backend</strong> &#8211; &#8216;xvfb&#8217;, &#8216;xvnc&#8217; or &#8216;xephyr&#8217;, ignores <tt class="docutils literal"><span class="pre">visible</span></tt></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="pyvirtualdisplay.Display.start">
 <tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#pyvirtualdisplay.Display.start" title="Permalink to this definition">¶</a></dt>
@@ -110,7 +125,7 @@
 
 <dl class="class">
 <dt id="pyvirtualdisplay.smartdisplay.SmartDisplay">
-<em class="property">class </em><tt class="descclassname">pyvirtualdisplay.smartdisplay.</tt><tt class="descname">SmartDisplay</tt><big>(</big><em>visible=False</em>, <em>size=(1024</em>, <em>768)</em>, <em>color_depth=24</em>, <em>bgcolor='black'</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">pyvirtualdisplay.smartdisplay.</tt><tt class="descname">SmartDisplay</tt><big>(</big><em>backend=None</em>, <em>visible=False</em>, <em>size=(1024</em>, <em>768)</em>, <em>color_depth=24</em>, <em>bgcolor='black'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.autocrop">
 <tt class="descname">autocrop</tt><big>(</big><em>im</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.autocrop" title="Permalink to this definition">¶</a></dt>
@@ -197,7 +212,7 @@ Repeat screenshot until it is not empty.</p>
         <li class="right" >
           <a href="usage.html" title="Usage"
              >previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

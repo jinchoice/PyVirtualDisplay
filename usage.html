@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Usage &mdash; PyVirtualDisplay v0.0.6 documentation</title>
+    <title>Usage &mdash; PyVirtualDisplay v0.0.7 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.0.6',
+        VERSION:     '0.0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PyVirtualDisplay v0.0.6 documentation" href="index.html" />
+    <link rel="top" title="PyVirtualDisplay v0.0.7 documentation" href="index.html" />
     <link rel="next" title="API" href="api.html" />
     <link rel="prev" title="About" href="readme.html" /> 
   </head>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="readme.html" title="About"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -72,7 +72,7 @@
 <span class="kn">from</span> <span class="nn">pyvirtualdisplay.smartdisplay</span> <span class="kn">import</span> <span class="n">SmartDisplay</span>
 
 <span class="n">disp</span> <span class="o">=</span> <span class="n">SmartDisplay</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">xmessage</span> <span class="o">=</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage screenshot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">xmessage</span> <span class="o">=</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage hello&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">waitgrab</span><span class="p">()</span>
 <span class="n">xmessage</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 <span class="n">disp</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -88,7 +88,7 @@
 <span class="kn">from</span> <span class="nn">pyvirtualdisplay.smartdisplay</span> <span class="kn">import</span> <span class="n">SmartDisplay</span>
 
 <span class="n">disp</span> <span class="o">=</span> <span class="n">SmartDisplay</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">func</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage screenshot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">disp</span><span class="o">.</span><span class="n">waitgrab</span><span class="p">))</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage hello&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="n">disp</span><span class="o">.</span><span class="n">waitgrab</span><span class="p">))</span>
 <span class="n">img</span><span class="o">=</span><span class="n">func</span><span class="p">()</span>
 <span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -106,7 +106,7 @@
 <span class="kn">from</span> <span class="nn">pyvirtualdisplay.smartdisplay</span> <span class="kn">import</span> <span class="n">SmartDisplay</span>
 
 <span class="k">with</span> <span class="n">SmartDisplay</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">disp</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage screenshot&#39;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage hello&#39;</span><span class="p">):</span>
         <span class="n">img</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">waitgrab</span><span class="p">()</span>
 
 
@@ -117,6 +117,25 @@
 </pre>
 </div>
 <img alt="_images/screenshot_id3.png" src="_images/screenshot_id3.png" />
+</div>
+<div class="section" id="vncserver">
+<h2>vncserver<a class="headerlink" href="#vncserver" title="Permalink to this headline">¶</a></h2>
+<p>examples/vncserver.py</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Example for Xvnc backend</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">easyprocess</span> <span class="kn">import</span> <span class="n">EasyProcess</span>
+<span class="kn">from</span> <span class="nn">entrypoint2</span> <span class="kn">import</span> <span class="n">entrypoint</span>
+<span class="kn">from</span> <span class="nn">pyvirtualdisplay.display</span> <span class="kn">import</span> <span class="n">Display</span>
+
+<span class="nd">@entrypoint</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">rfbport</span><span class="o">=</span><span class="mi">5904</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">Display</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s">&#39;xvnc&#39;</span><span class="p">,</span> <span class="n">rfbport</span><span class="o">=</span><span class="n">rfbport</span><span class="p">)</span> <span class="k">as</span> <span class="n">disp</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage hello&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">proc</span><span class="p">:</span>
+            <span class="n">proc</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -131,6 +150,7 @@
 <li><a class="reference internal" href="#">Usage</a><ul>
 <li><a class="reference internal" href="#gui-test">GUI Test</a></li>
 <li><a class="reference internal" href="#screenshot">Screenshot</a></li>
+<li><a class="reference internal" href="#vncserver">vncserver</a></li>
 </ul>
 </li>
 </ul>
@@ -175,7 +195,7 @@
         <li class="right" >
           <a href="readme.html" title="About"
              >previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

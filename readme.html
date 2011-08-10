@@ -7,13 +7,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>About &mdash; PyVirtualDisplay v0.0.6 documentation</title>
+    <title>About &mdash; PyVirtualDisplay v0.0.7 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.0.6',
+        VERSION:     '0.0.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PyVirtualDisplay v0.0.6 documentation" href="index.html" />
+    <link rel="top" title="PyVirtualDisplay v0.0.7 documentation" href="index.html" />
     <link rel="next" title="Usage" href="usage.html" />
     <link rel="prev" title="Indices and tables" href="index.html" /> 
   </head>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="index.html" title="Indices and tables"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,6 +56,18 @@
 <dd><ul class="first last simple">
 <li>home: <a class="reference external" href="https://github.com/ponty/PyVirtualDisplay">https://github.com/ponty/PyVirtualDisplay</a></li>
 <li>documentation: <a class="reference external" href="http://ponty.github.com/PyVirtualDisplay">http://ponty.github.com/PyVirtualDisplay</a></li>
+</ul>
+</dd>
+<dt>Features:</dt>
+<dd><ul class="first last simple">
+<li>python wrapper</li>
+<li>backends: <a class="reference external" href="http://en.wikipedia.org/wiki/Xvfb">Xvfb</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Xephyr">Xephyr</a>, <a class="reference external" href="http://www.hep.phy.cam.ac.uk/vnc_docs/xvnc.html">Xvnc</a></li>
+</ul>
+</dd>
+<dt>Known problems:</dt>
+<dd><ul class="first last simple">
+<li>Python 3 is not supported</li>
+<li>only a few backend options are supported</li>
 </ul>
 </dd>
 <dt>Possible applications:</dt>
@@ -76,11 +88,9 @@
 <p>Create screenshot of xmessage with Xvfb:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">easyprocess</span> <span class="kn">import</span> <span class="n">EasyProcess</span>
 <span class="kn">from</span> <span class="nn">pyvirtualdisplay.smartdisplay</span> <span class="kn">import</span> <span class="n">SmartDisplay</span>
-<span class="n">disp</span> <span class="o">=</span> <span class="n">SmartDisplay</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">xmessage</span> <span class="o">=</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage hello&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">waitgrab</span><span class="p">()</span>
-<span class="n">xmessage</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-<span class="n">disp</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">SmartDisplay</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">disp</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">EasyProcess</span><span class="p">(</span><span class="s">&#39;xmessage hello&#39;</span><span class="p">):</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">waitgrab</span><span class="p">()</span>
 <span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -90,27 +100,27 @@
 <div class="section" id="general">
 <h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><ul class="simple">
-<li>install <a class="reference external" href="http://en.wikipedia.org/wiki/Xvfb">Xvfb</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Xephyr">Xephyr</a>.</li>
-<li>install <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">setuptools</a> or <a class="reference external" href="http://pip.openplans.org/">pip</a></li>
-<li>optional: <a class="reference external" href="https://github.com/ponty/pyscreenshot">pyscreenshot</a> and <a class="reference external" href="http://www.pythonware.com/library/pil/">PIL</a> should be installed for <tt class="docutils literal"><span class="pre">smartdisplay</span></tt> submodule</li>
-<li>install the program:</li>
-</ul>
-</div></blockquote>
-<p>if you have <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">setuptools</a> installed:</p>
+<div><ul>
+<li><p class="first">install <a class="reference external" href="http://en.wikipedia.org/wiki/Xvfb">Xvfb</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Xephyr">Xephyr</a> or <a class="reference external" href="http://www.hep.phy.cam.ac.uk/vnc_docs/xvnc.html">Xvnc</a>.</p>
+</li>
+<li><p class="first">install <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">setuptools</a></p>
+</li>
+<li><p class="first">optional: <a class="reference external" href="https://github.com/ponty/pyscreenshot">pyscreenshot</a> and <a class="reference external" href="http://www.pythonware.com/library/pil/">PIL</a> should be installed for <tt class="docutils literal"><span class="pre">smartdisplay</span></tt> submodule</p>
+</li>
+<li><p class="first">install the program:</p>
 <div class="highlight-python"><pre># as root
 easy_install pyvirtualdisplay</pre>
 </div>
-<p>if you have <a class="reference external" href="http://pip.openplans.org/">pip</a> installed:</p>
-<div class="highlight-python"><pre># as root
-pip install pyvirtualdisplay</pre>
-</div>
+</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="ubuntu">
 <h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><pre>sudo apt-get install python-setuptools
 sudo apt-get install xvfb
 sudo apt-get install xserver-xephyr
+sudo apt-get install tightvncserver
 sudo easy_install pyvirtualdisplay
 # optional
 sudo apt-get install python-imaging
@@ -120,6 +130,7 @@ sudo easy_install pyscreenshot</pre>
 </div>
 <div class="section" id="uninstall">
 <h2>Uninstall<a class="headerlink" href="#uninstall" title="Permalink to this headline">¶</a></h2>
+<p>install <a class="reference external" href="http://pip.openplans.org/">pip</a>:</p>
 <div class="highlight-python"><pre># as root
 pip uninstall pyvirtualdisplay</pre>
 </div>
@@ -184,7 +195,7 @@ pip uninstall pyvirtualdisplay</pre>
         <li class="right" >
           <a href="index.html" title="Indices and tables"
              >previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
