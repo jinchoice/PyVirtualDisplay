@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API &mdash; PyVirtualDisplay v0.0.7 documentation</title>
+    <title>API &mdash; PyVirtualDisplay 0.0.7 documentation</title>
+    
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PyVirtualDisplay v0.0.7 documentation" href="index.html" />
+    <link rel="top" title="PyVirtualDisplay 0.0.7 documentation" href="index.html" />
     <link rel="next" title="Hierarchy" href="struct.html" />
     <link rel="prev" title="Usage" href="usage.html" /> 
   </head>
@@ -39,7 +42,7 @@
         <li class="right" >
           <a href="usage.html" title="Usage"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay 0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -58,7 +61,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>color_depth</strong> &#8211; [8, 16, 24, 32]</li>
 <li><strong>size</strong> &#8211; screen size (width,height)</li>
 <li><strong>bgcolor</strong> &#8211; background color [&#8216;black&#8217; or &#8216;white&#8217;]</li>
@@ -77,7 +80,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">self</td>
 </tr>
 </tbody>
 </table>
@@ -91,7 +94,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body">self</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">self</td>
 </tr>
 </tbody>
 </table>
@@ -115,7 +118,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -130,10 +133,20 @@
 <dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.autocrop">
 <tt class="descname">autocrop</tt><big>(</big><em>im</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.autocrop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Crop borders off an image.</p>
-<p>&#64;param im Source image.
-&#64;param bgcolor Background color, using either a color tuple or
-a color name (1.1.4 only).
-&#64;return An image without borders, or None if there&#8217;s no actual
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>im</strong> &#8211; Source image.</li>
+<li><strong>bgcolor</strong> &#8211; Background color, using either a color tuple or</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>a color name (1.1.4 only).
+:return: An image without borders, or None if there&#8217;s no actual
 content in the image.</p>
 </dd></dl>
 
@@ -146,15 +159,19 @@ content in the image.</p>
 <dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.waitgrab">
 <tt class="descname">waitgrab</tt><big>(</big><em>timeout=10</em>, <em>autocrop=True</em>, <em>cb_imgcheck=None</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.waitgrab" title="Permalink to this definition">¶</a></dt>
 <dd><p>start process and create screenshot.
-Repeat screenshot until it is not empty.</p>
+Repeat screenshot until it is not empty and 
+cb_imgcheck callback function returns True 
+for current screenshot.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>autocrop</strong> &#8211; True -&gt; crop screenshot</li>
 <li><strong>timeout</strong> &#8211; int</li>
-<li><strong>cb_imgcheck</strong> &#8211; callback for testing img, True=accept img, False = reject img</li>
+<li><strong>cb_imgcheck</strong> &#8211; None or callback for testing img, 
+True = accept img, 
+False = reject img</li>
 </ul>
 </td>
 </tr>
@@ -186,7 +203,7 @@ Repeat screenshot until it is not empty.</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -212,12 +229,12 @@ Repeat screenshot until it is not empty.</p>
         <li class="right" >
           <a href="usage.html" title="Usage"
              >previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay v0.0.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay 0.0.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2011, ponty.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
   </body>
 </html>
