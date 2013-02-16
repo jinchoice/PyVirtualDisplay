@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API &mdash; PyVirtualDisplay 0.1.1 documentation</title>
+    <title>API &mdash; PyVirtualDisplay 0.1.2 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.1.1',
+        VERSION:     '0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PyVirtualDisplay 0.1.1 documentation" href="index.html" />
+    <link rel="top" title="PyVirtualDisplay 0.1.2 documentation" href="index.html" />
     <link rel="next" title="Hierarchy" href="struct.html" />
     <link rel="prev" title="Usage" href="usage.html" /> 
   </head>
@@ -42,7 +42,7 @@
         <li class="right" >
           <a href="usage.html" title="Usage"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay 0.1.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay 0.1.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -136,12 +136,17 @@
 <tt class="descname">pyscreenshot_backend</tt><em class="property"> = None</em><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.pyscreenshot_backend" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.pyscreenshot_childprocess">
+<tt class="descname">pyscreenshot_childprocess</tt><em class="property"> = False</em><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.pyscreenshot_childprocess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="pyvirtualdisplay.smartdisplay.SmartDisplay.waitgrab">
 <tt class="descname">waitgrab</tt><big>(</big><em>timeout=60</em>, <em>autocrop=True</em>, <em>cb_imgcheck=None</em><big>)</big><a class="headerlink" href="#pyvirtualdisplay.smartdisplay.SmartDisplay.waitgrab" title="Permalink to this definition">¶</a></dt>
 <dd><p>start process and create screenshot.
-Repeat screenshot until it is not empty and 
-cb_imgcheck callback function returns True 
+Repeat screenshot until it is not empty and
+cb_imgcheck callback function returns True
 for current screenshot.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -150,8 +155,8 @@ for current screenshot.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>autocrop</strong> &#8211; True -&gt; crop screenshot</li>
 <li><strong>timeout</strong> &#8211; int</li>
-<li><strong>cb_imgcheck</strong> &#8211; None or callback for testing img, 
-True = accept img, 
+<li><strong>cb_imgcheck</strong> &#8211; None or callback for testing img,
+True = accept img,
 False = reject img</li>
 </ul>
 </td>
@@ -210,7 +215,7 @@ False = reject img</li>
         <li class="right" >
           <a href="usage.html" title="Usage"
              >previous</a> |</li>
-        <li><a href="index.html">PyVirtualDisplay 0.1.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">PyVirtualDisplay 0.1.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
