@@ -41,6 +41,7 @@ class XvfbDisplay(AbstractDisplay):
     def _cmd(self):
         cmd = [
                dict(black='-br', white='-wr')[self.bgcolor],
+               '-noreset',
                '-nolisten',
                'tcp',
                '-screen',
